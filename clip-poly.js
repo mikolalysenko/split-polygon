@@ -1,6 +1,5 @@
 "use strict"
 
-
 var robustDot = require("robust-dot-product")
 var robustSum = require("robust-sum")
 
@@ -20,8 +19,8 @@ function lerpW(a, wa, b, wb) {
   if(d*d < 1e-6) {
     return a
   }
-  var t = wb / d
-  var ti = -wa / d
+  var ti = wb / d
+  var t = -wa / d
   var n = a.length
   var r = new Array(n)
   for(var i=0; i<n; ++i) {
@@ -61,6 +60,7 @@ function positive(points, plane) {
   for(var s=points[points.length-1], t=points[0], i=0; i<points.length; ++i, s=t) {
     t = points[i]
     var b = planeT(t, plane)
+    console.log("d=",a,b)
     if((a < 0 && b > 0) || (a > 0 && b < 0)) {
       pos.push(lerpW(s, b, t, a))
     }
@@ -71,7 +71,6 @@ function positive(points, plane) {
   }
   return pos
 }
-
 
 function negative(points, plane) {
   var neg = []
