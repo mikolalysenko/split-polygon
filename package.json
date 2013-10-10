@@ -1,6 +1,6 @@
 {
   "name": "split-polygon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Splits a polygon by a plane",
   "main": "clip-poly.js",
   "directories": {
