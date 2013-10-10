@@ -60,7 +60,6 @@ function positive(points, plane) {
   for(var s=points[points.length-1], t=points[0], i=0; i<points.length; ++i, s=t) {
     t = points[i]
     var b = planeT(t, plane)
-    console.log("d=",a,b)
     if((a < 0 && b > 0) || (a > 0 && b < 0)) {
       pos.push(lerpW(s, b, t, a))
     }
