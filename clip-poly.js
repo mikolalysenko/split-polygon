@@ -16,11 +16,13 @@ function planeT(p, plane) {
 //Can't do this exactly and emit a floating point result
 function lerpW(a, wa, b, wb) {
   var d = wb - wa
-  if(d*d < 1e-6) {
-    return a
-  }
-  var ti = wb / d
   var t = -wa / d
+  if(t < 0.0) {
+    t = 0.0
+  } else if(t > 1.0) {
+    t = 1.0
+  }
+  var ti = 1.0 - t
   var n = a.length
   var r = new Array(n)
   for(var i=0; i<n; ++i) {
