@@ -1,6 +1,6 @@
 split-polygon
 =============
-Splits a polygon by a plane into two parts (or optionally clips the polygon against a single plane) using the Sutherland-Hodgman algorithm.  Works in arbitrary dimensions, both in the server and the browser
+Splits a *convex* polygon by a plane into two parts (or optionally clips the polygon against a single plane) using the Sutherland-Hodgman algorithm.  Works in arbitrary dimensions, both in the server and the browser
 
 ## Install
 
@@ -26,7 +26,7 @@ var splitPolygon = require("split-polygon")
 ```
 
 ### `splitPolygon(poly, plane)`
-Splits the polygon `poly` against plane into two parts, one above the plane and the other below it.  The equation for the plane is determined by:
+Splits the *convex* polygon `poly` against plane into two parts, one above the plane and the other below it.  The equation for the plane is determined by:
 
 ```javascript
 function planeDistance(x) {
@@ -36,7 +36,7 @@ function planeDistance(x) {
 
 Points above the plane are those where `planeDistance(x) >= 0` and below are those with `planeDistance(x) <= 0`
 
-* `poly` is the polygon
+* `poly` is a *convex* polygon
 * `plane` is the plane
 
 **Returns** An object with two properties:
