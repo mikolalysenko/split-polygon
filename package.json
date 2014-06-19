@@ -1,14 +1,14 @@
 {
   "name": "split-polygon",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Splits a convex polygon by a plane",
   "main": "clip-poly.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
-    "robust-dot-product": "~0.0.0",
-    "robust-sum": "~0.0.2"
+    "robust-dot-product": "^1.0.0",
+    "robust-sum": "^1.0.0"
   },
   "devDependencies": {
     "tap": "~0.4.4",
